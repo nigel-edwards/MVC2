@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetView</title>
+</head>
+<body>
+    <div> 
+        <div>
+            @{
+                MVC2.Models.Customer cust = (MVC2.Models.Customer)
+                    ViewData["Customer"];
+            }
+
+            <b>Customer Details </b><br />
+            Employee Name : @cust.FirstName@cust.LastName <br />
+            Employee Salary: @cust.Salary.ToString("C")
+        </div>
+    </div>
+</body>
+</html>

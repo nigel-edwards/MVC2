@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,18 @@ namespace MVC2.Controllers
         public ActionResult NewStuff()
         {
             return View("NewStuff");
+        }
+
+        public ActionResult GetView()
+        {
+            Customer cust = new Customer();
+            cust.FirstName = "Debbie";
+            cust.LastName = "Edwards";
+            cust.Salary = 200000;
+
+            ViewData["Customer"] = cust;
+
+            return View("GetView");
         }
 	}
 }
