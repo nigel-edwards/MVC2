@@ -14,5 +14,10 @@ namespace MVC2.Controllers
         {
             return View();
         }
+
+        public ActionResult NewStuff()
+        {
+            return View("NewStuff");
+        }
 	}
 }
