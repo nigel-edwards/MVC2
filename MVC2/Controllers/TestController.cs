@@ -29,7 +29,7 @@ namespace MVC2.Controllers
             cust.Salary = 200000;
 
             ViewData["Customer"] = cust;
-
+            ViewBag.Customer = cust;
             return View("GetView");
         }
 	}

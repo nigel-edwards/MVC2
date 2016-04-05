@@ -8,19 +8,20 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>GetView</title>
+    <title>Get View</title>
 </head>
 <body>
     <div> 
         <div>
             @{
-                MVC2.Models.Customer cust = (MVC2.Models.Customer)
-                    ViewData["Customer"];
+                MVC2.Models.Customer cust = (MVC2.Models.Customer)ViewBag.Customer;
             }
 
             <b>Customer Details </b><br />
-            Employee Name : @cust.FirstName @cust.LastName <br />
-            Employee Salary: @cust.Salary.ToString("C")
+            Customer Name : @cust.FirstName @cust.LastName <br />
+            Customer Salary: @cust.Salary.ToString("C")
+
+
         </div>
     </div>
 </body>
