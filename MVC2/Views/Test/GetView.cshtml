@@ -1,7 +1,8 @@
 ﻿
-@{
-    Layout = null;
-}
+@model MVC2.Models.Customer
+
+@{ Layout = null; }
+
 
 <!DOCTYPE html>
 
@@ -13,13 +14,23 @@
 <body>
     <div> 
         <div>
-            @{
-                MVC2.Models.Customer cust = (MVC2.Models.Customer)ViewBag.Customer;
-            }
+            Customer Details
 
-            <b>Customer Details </b><br />
-            Customer Name : @cust.FirstName @cust.LastName <br />
-            Customer Salary: @cust.Salary.ToString("C")
+            Customer Name : @Model.FirstName @Model.LastName
+
+            @if (Model.Salary > 15000)
+            {
+                <span style="background-color:yellow">
+                    Customer Salary: @Model.Salary.ToString("C")
+                </span>
+            }
+            else
+            {
+                <span style="background-color:green">
+
+                    Customer Salary: @Model.Salary.ToString("C")
+                </span>
+            }
 
 
         </div>

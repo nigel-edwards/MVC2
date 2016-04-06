@@ -26,11 +26,11 @@ namespace MVC2.Controllers
             Customer cust = new Customer();
             cust.FirstName = "Debbie";
             cust.LastName = "Edwards";
-            cust.Salary = 200000;
+            cust.Salary = 1000;
 
             ViewData["Customer"] = cust;
             ViewBag.Customer = cust;
-            return View("GetView");
+            return View("GetView", cust);
         }
 	}
 }
