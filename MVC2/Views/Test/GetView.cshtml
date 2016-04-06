@@ -1,5 +1,5 @@
-﻿
-@model MVC2.Models.Customer
+﻿@using MVC2.ViewModels
+@model CustomerListViewModel
 
 @{ Layout = null; }
 
@@ -12,28 +12,23 @@
     <title>Get View</title>
 </head>
 <body>
-    <div> 
-        <div>
-            Customer Details
-
-            Customer Name : @Model.FirstName @Model.LastName
-
-            @if (Model.Salary > 15000)
+    Hello @Model.UserName
+    <hr />
+    <div>
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Salary</th>
+            </tr>
+            @foreach (CustomerViewModel item in Model.Customers)
             {
-                <span style="background-color:yellow">
-                    Customer Salary: @Model.Salary.ToString("C")
-                </span>
+                <tr>
+                    <td>@item.CustomerName</td>
+                    <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                </tr>
             }
-            else
-            {
-                <span style="background-color:green">
-
-                    Customer Salary: @Model.Salary.ToString("C")
-                </span>
-            }
-
-
-        </div>
+        </table>
     </div>
+
 </body>
 </html>
