@@ -46,11 +46,8 @@ namespace MVC2.Controllers
                 custViewModels.Add(vmCus);
             }
 
-
             customersVM.UserName = "Admin";
             customersVM.Customers = custViewModels;
-
-
 
             return View("GetView", customersVM);
         }

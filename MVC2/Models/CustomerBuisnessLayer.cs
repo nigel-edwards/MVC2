@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MVC2.DataAccessLayer;
 
 namespace MVC2.Models
 {
@@ -9,6 +10,7 @@ namespace MVC2.Models
     {
         public List<Customer> GetCustomers()
         {
+            /*
             List<Customer> customers = new List<Customer>();
             Customer cus = new Customer();
             cus.FirstName = "Johnson";
@@ -27,8 +29,14 @@ namespace MVC2.Models
             cus.LastName = " Edwards";
             cus.Salary = 34000;
             customers.Add(cus);
-
+              
             return customers;
+            */
+
+            SalesERPDAL salesDal = new SalesERPDAL();
+            return salesDal.Customers.ToList();
+
+
         }
     }
 }
